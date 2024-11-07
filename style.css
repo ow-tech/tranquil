@@ -1,3 +1,38 @@
-h1{
-    color: brown;
+/* Bootstrap colors overide */
+.greenColor {
+  color: #214B4F;
+}
+.greenBackground {
+  background-color: #214B4F;
+  color: white;
+}
+
+.redColor {
+  color: #E55151;
+}
+
+.redBackground {
+  background-color: #E55151;
+  color: white;
+}
+.yellowColor {
+  color: #F9E4AD;
+}
+
+.yellowBackground {
+  background-color: #F9E4AD;
+  color: black;
+}
+
+.notificationColor{
+   color: #4AB740;;
+}
+.notificationBackground{
+    background-color: #4AB740;
+    color:white;
+ }
+*{
+    margin: 0;
+    padding: 0;
+    
 }
