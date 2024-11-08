@@ -93,4 +93,33 @@
 
  /* Our Services */
 
- 
+ .our-fleet-text {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.our-fleet-text::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 65%;
+    height: 4px;
+    background-color: #E77F55;
+    transform: translateX(-70%);
+}
+
+/* Footer */
+.footer{
+    background-color: #214b4f;
+    color: white;
+    height: 40vh;
+    margin-top: 10rem;
+}
+.custom-link { 
+    display: block; 
+     color: white; 
+     text-decoration: none; 
+      margin-bottom: 5px; 
+}
