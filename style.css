@@ -52,10 +52,28 @@
   
 }
 
-#feature-section .row .col{
+ .row .col{
 display: flex;
+align-items: center;
 }
 
-#feature-section .row .col1{
-  float: right;
+.row .col h3{
+  text-align: center;
+ margin-bottom: 50px;
+}
+.row .col .col1{
+  margin: 7%;
+}
+
+.row .col .col2 img{
+  margin: 7%;
+  border-radius: 15px;
+}
+
+.container .container-row{
+  display: flex;
+}
+
+.container .container-row img{
+  width: 150px;
 }
