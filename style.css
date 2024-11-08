@@ -36,3 +36,26 @@
     padding: 0;
     
 }
+.navbar-brand{
+  display: none;
+  max-width: 50px;
+  height: auto;
+}
+
+#header{
+  height: 40vh;
+}
+
+#feature-section .row{
+  display:flex;
+  margin: 10%;
+  
+}
+
+#feature-section .row .col{
+display: flex;
+}
+
+#feature-section .row .col1{
+  float: right;
+}
