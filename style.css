@@ -80,3 +80,19 @@ align-items: center;
 
 
 /*----------------------------about page css--------------------------*/
+
+#hero1{
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+
+.about-row{
+  display: flex;
+  gap: 30px;
+}
+
+.about-row img{
+flex: 1;
+  width: 200px;
+}
