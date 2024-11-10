@@ -57,42 +57,64 @@ display: flex;
 align-items: center;
 }
 
-.row .col h3{
+.col h3{
   text-align: center;
  margin-bottom: 50px;
 }
-.row .col .col1{
+ .col1{
   margin: 7%;
 }
 
-.row .col .col2 img{
+.col2 img{
   margin: 7%;
   border-radius: 15px;
 }
 
-.container .container-row{
+.container-row{
   display: flex;
 }
 
-.container .container-row img{
+ .container-row img{
   width: 150px;
 }
 
 
 /*----------------------------about page css--------------------------*/
 
-#hero1{
-align-items: center;
-justify-content: center;
-text-align: center;
+#hero1 { 
+  margin: 5%;
+  text-align: center;
 }
 
-.about-row{
+#hero2, #hero3 {
+  margin: 6%;
+}
+
+.about-row {
   display: flex;
-  gap: 30px;
+  gap: 20px; /* Adds space between columns */
+  flex-wrap: wrap; /* Ensures responsive layout on smaller screens */
 }
 
-.about-row img{
-flex: 1;
-  width: 200px;
+.about-section1, .about-section2, .about-section11, .about-section12 {
+  flex: 1;
+}
+
+.about-section2 img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+#hero3 {
+  border: 0.7px solid rgba(0, 0, 0, 0.3); /* Corrected border color */
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .about-row {
+    flex-direction: column; /* Stack columns vertically on small screens */
+  }
 }
