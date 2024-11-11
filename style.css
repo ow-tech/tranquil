@@ -1,40 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 /* Bootstrap colors overide */
 .greenColor {
-  color: #214B4F;
+  color: #214b4f;
 }
 .greenBackground {
-  background-color: #214B4F;
+  background-color: #214b4f;
   color: white;
 }
 
 .redColor {
-  color: #E55151;
+  color: #e55151;
 }
 
 .redBackground {
-  background-color: #E55151;
+  background-color: #e55151;
   color: white;
 }
 .yellowColor {
-  color: #F9E4AD;
+  color: #f9e4ad;
 }
 
 .yellowBackground {
-  background-color: #F9E4AD;
+  background-color: #f9e4ad;
   color: black;
 }
 
-.notificationColor{
-   color: #4AB740;;
+.notificationColor {
+  color: #4ab740;
 }
-.notificationBackground{
-    background-color: #4AB740;
-    color:white;
+.notificationBackground {
+  background-color: #4ab740;
+  color: white;
+}
+
+/* nav links on hoover effects */
+.navbar-nav .nav-link {
+  font-weight: bold;
+}
+.custom-nav-link {
+  position: relative;
+}
+.custom-nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #E77F55;
+  transition: width 0.3s ease;
+}
+.custom-nav-link:hover::after {
+  width: 65%;
+}
+
+.nav-link.active.custom-nav-link {
+  color: #E77F55;
+}
+
+/* overide drop down color of active and focus  */
+.dropdown-item:active,
+.dropdown-item:focus {
+  color: white !important;
+  background-color: #214b4f;
+}
+
+/* Why choose us */
+
+.why-choose-us-container{
+    margin-top: 10rem;
+
+    padding: 20px;
+   
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.carousel-item img{
+    border-radius: 10px;
+}
+.hero-text {
+  text-align: start;
+}
+
+.highlight-text { font-size: 1.2rem; 
+    font-weight: bolder; 
  }
-*{
-    margin: 0;
-    padding: 0;
-    
+
+
+ /* Our Services */
+
+ .our-fleet-text {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.our-fleet-text::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 65%;
+    height: 4px;
+    background-color: #E77F55;
+    transform: translateX(-70%);
+}
+
+/* Footer */
+.footer{
+    background-color: #214b4f;
+    color: white;
+    height: 40vh;
+    margin-top: 10rem;
+}
+.custom-link { 
+    display: block; 
+     color: white; 
+     text-decoration: none; 
+      margin-bottom: 5px; 
 }
 .navbar-brand{
   display: none;
