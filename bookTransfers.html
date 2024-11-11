@@ -7,8 +7,63 @@
     <title>Book Transfers</title>
 </head>
 <body>
-    <h1 >Tranquil</h1>
+    <title>Booking Form</title>
+<book-now>
+   
+    <table>
+        <tr>
+            <th colspan="2">Booking Form</th>
+        </tr>
+        <tr>
+            <td>First Name</td>
+            <td><input type="text" id="firstName" placeholder="First Name"></td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td><input type="text" id="lastName" placeholder="Last Name"></td>
+        </tr>
+        <tr>
+            <td>Phone Number</td>
+            <td><input type="tel" id="phone" placeholder="Phone Number"></td>
+        </tr>
+        <tr>
+            <td>Email Address</td>
+            <td><input type="email" id="email" placeholder="Email Address"></td>
+        </tr>
+        <tr>
+            <td>Number of Adults</td>
+            <td><input type="number" id="adults" placeholder="0"></td>
+        </tr>
+        <tr>
+            <td>Number of Children</td>
+            <td><input type="number" id="children" placeholder="0"></td>
+        </tr>
+        <tr>
+            <td>From</td>
+            <td><input type="text" id="from" placeholder="Enter Origin"></td>
+        </tr>
+        <tr>
+            <td>To</td>
+            <td><input type="text" id="to" placeholder="Enter Destination"></td>
+        </tr>
+        <tr>
+            <td>Travel Date</td>
+            <td><input type="date" id="travelDate"></td>
+        </tr>
+        <tr>
+            <td>Captcha</td>
+            <td>
+                <span id="captcha">12 + 8 = ?</span>
+                <input type="text" id="captchaAnswer" placeholder="Answer">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <button onclick="confirmBooking()">Confirm Booking</button>
+            </td>
+        </tr>
+    </table>
         
     <script src="scripts.js"></script>
-</body>
+</book-now>
 </html>
