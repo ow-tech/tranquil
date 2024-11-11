@@ -28,3 +28,20 @@ if (exampleModal) {
     modalBodyInput.value = recipient
   })
 }
+
+// JavaScript for booking confirmation with basic CAPTCHA
+function confirmBooking() {
+  const captchaAnswer = document.getElementById('captchaAnswer').value;
+  if (parseInt(captchaAnswer) === 20) { // example captcha
+      alert('Booking Confirmed!');
+  } else {
+      alert('Incorrect CAPTCHA. Please try again.');
+  }
+}
+
+// Restrict travel date to upcoming dates only
+document.addEventListener('DOMContentLoaded', () => {
+  const travelDateInput = document.getElementById('travelDate');
+  const today = new Date().toISOString().split('T')[0];
+  travelDateInput.setAttribute('min', today);
+});
