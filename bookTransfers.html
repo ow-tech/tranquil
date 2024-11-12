@@ -10,60 +10,185 @@
     <title>Booking Form</title>
 <book-now>
    
-    <table>
-        <tr>
-            <th colspan="2">Booking Form</th>
-        </tr>
-        <tr>
-            <td>First Name</td>
-            <td><input type="text" id="firstName" placeholder="First Name"></td>
-        </tr>
-        <tr>
-            <td>Last Name</td>
-            <td><input type="text" id="lastName" placeholder="Last Name"></td>
-        </tr>
-        <tr>
-            <td>Phone Number</td>
-            <td><input type="tel" id="phone" placeholder="Phone Number"></td>
-        </tr>
-        <tr>
-            <td>Email Address</td>
-            <td><input type="email" id="email" placeholder="Email Address"></td>
-        </tr>
-        <tr>
-            <td>Number of Adults</td>
-            <td><input type="number" id="adults" placeholder="0"></td>
-        </tr>
-        <tr>
-            <td>Number of Children</td>
-            <td><input type="number" id="children" placeholder="0"></td>
-        </tr>
-        <tr>
-            <td>From</td>
-            <td><input type="text" id="from" placeholder="Enter Origin"></td>
-        </tr>
-        <tr>
-            <td>To</td>
-            <td><input type="text" id="to" placeholder="Enter Destination"></td>
-        </tr>
-        <tr>
-            <td>Travel Date</td>
-            <td><input type="date" id="travelDate"></td>
-        </tr>
-        <tr>
-            <td>Captcha</td>
-            <td>
+    <div class="container mt-5">
+        <form id="bookingForm" onsubmit="return validateForm(event);">
+            <input 
+            type="hidden" id="service" name="service" value="Book Transfers"
+            class="form-control" 
+            >
+          <table class="table table-bordered">
+            <!-- Form Title -->
+            <tr>
+              <th colspan="2">Booking Form</th>
+            </tr>
+   
+              
+              
+              
+            <!-- First Name -->
+            <tr>
+              <td>First Name</td>
+              <td>
+                <input 
+                  type="text" 
+                  id="firstName" 
+                  name="from_name" 
+                  placeholder="First Name" 
+                  class="form-control" 
+                  required>
+              </td>
+            </tr>
+      
+            <!-- Last Name -->
+            <!-- <tr>
+              <td>Last Name</td>
+              <td>
+                <input 
+                  type="text" 
+                  id="lastName" 
+                  name="lastName" 
+                  placeholder="Last Name" 
+                  class="form-control" 
+                  required>
+              </td>
+            </tr> -->
+      
+            <!-- Phone Number -->
+            <tr>
+              <td>Phone Number</td>
+              <td>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  placeholder="Phone Number" 
+                  class="form-control" 
+                  pattern="[0-9]{10}" 
+                  title="Please enter a 10-digit phone number" 
+                  required>
+              </td>
+            </tr>
+      
+            <!-- Email Address -->
+            <tr>
+              <td>Email Address</td>
+              <td>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="reply_to" 
+                  placeholder="Email Address" 
+                  class="form-control" 
+                  required>
+              </td>
+            </tr>
+      
+            <!-- Number of Adults -->
+            <tr>
+              <td>Number of Adults</td>
+              <td>
+                <input 
+                  type="number" 
+                  id="adults" 
+                  name="adults" 
+                  placeholder="0" 
+                  class="form-control" 
+                  min="1" 
+                  required>
+              </td>
+            </tr>
+      
+            <!-- Number of Children -->
+            <tr>
+              <td>Number of Children</td>
+              <td>
+                <input 
+                  type="number" 
+                  id="children" 
+                  name="children" 
+                  placeholder="0" 
+                  class="form-control" 
+                  min="0" 
+                  required>
+              </td>
+            </tr>
+      
+            <!-- From Location -->
+            <tr>
+              <td>From</td>
+              <td>
+                <input 
+                  type="text" 
+                  id="from" 
+                  name="from" 
+                  placeholder="Enter Origin" 
+                  class="form-control" 
+                  required>
+              </td>
+            </tr>
+      
+            <!-- To Location -->
+            <tr>
+              <td>To</td>
+              <td>
+                <input 
+                  type="text" 
+                  id="to" 
+                  name="to" 
+                  placeholder="Enter Destination" 
+                  class="form-control" 
+                  required>
+              </td>
+            </tr>
+      
+            <!-- Travel Date -->
+            <tr>
+              <td>Travel Date</td>
+              <td>
+                <input 
+                  type="date" 
+                  id="travelDate" 
+                  name="travelDate" 
+                  class="form-control" 
+                  min="<?= date('Y-m-d'); ?>" 
+                  required>
+              </td>
+            </tr>
+      
+            <!-- Captcha -->
+            <tr>
+              <td>Captcha</td>
+              <td>
                 <span id="captcha">12 + 8 = ?</span>
-                <input type="text" id="captchaAnswer" placeholder="Answer">
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" style="text-align: center;">
-                <button onclick="confirmBooking()">Confirm Booking</button>
-            </td>
-        </tr>
-    </table>
+                <input 
+                  type="text" 
+                  id="captchaAnswer" 
+                  name="captchaAnswer" 
+                  placeholder="Answer" 
+                  class="form-control" 
+                  required>
+              </td>
+            </tr>
+      
+            <!-- Confirm Button -->
+            <tr>
+              <td colspan="2" class="text-center">
+                <button type="submit" class="btn btn-primary">Confirm Booking</button>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      
         
     <script src="scripts.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('X_M1wclrQWKPOJAJI')
+</script>
+
 </book-now>
 </html>
