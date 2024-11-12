@@ -209,7 +209,7 @@ align-items: center;
 /*----------------------------bookTransfers page css--------------------------*/
 /* General styling for table */
 book-now {
-  font-family: poppins, sans-serif;
+  font-family: Arial, Helvetica, sans-serif, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -232,23 +232,28 @@ th, td {
   text-align: left;
 }
 th {
-  background-color: #f0f0f0;
-  font-weight: bold;
+  color: #fff;
+  background-color: #E55151;
+ font-weight: bold;
+ font-size: 30px;
+  text-align: center;
 }
 input, select, button {
   width: 100%;
   padding: 8px;
+  padding-right: 0;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 14px;
 }
 button {
-  background-color: #4CAF50;
+  background-color: #214B4F;
   color: white;
   cursor: pointer;
 }
 button:hover {
-  background-color: #45a049;
+  background-color: #F1844C;
+  transition: 0.3s;
 }
 
 /* Responsive design for small screens */
