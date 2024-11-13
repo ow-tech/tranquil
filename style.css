@@ -270,3 +270,92 @@ form-button:hover {
       font-size: 12px;
   }
 }
+
+/* ----------------------rent a car ------------------- */
+
+/* Root colors */
+:root {
+  --dark-teal: #214B4F;
+  --beige: #F9E4AD;
+  --red: #E55151;
+  --green: #4AB740;
+}
+rent-h3{
+  color: #F1844C;
+}
+rent-body {
+  font-family: Arial, sans-serif;
+  background-color: var(--beige);
+  color: var(--dark-teal);
+  line-height: 1.6;
+}
+
+rent-header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: var(--dark-teal);
+  color: var(--beige);
+}
+
+rent-header h1 {
+  font-size: 2rem;
+}
+
+rent-header  p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0.5rem auto;
+}
+
+.car-rentals {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.car-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--beige);
+  border: 1px solid var(--dark-teal);
+  border-radius: 8px;
+  width: 220px;
+  padding: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.car-section:hover {
+  background-color: var(--green);
+  color: var(--beige);
+}
+
+.car-section img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--dark-teal);
+  margin-bottom: 0.75rem;
+}
+.card-title{
+ color: red;
+}
+.car-details h3 {
+  color: var(--red);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.car-details p {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .car-section {
+      width: 100%;
+  }
+}
