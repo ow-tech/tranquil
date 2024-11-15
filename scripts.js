@@ -45,3 +45,4 @@ document.addEventListener('DOMContentLoaded', () => {
   const today = new Date().toISOString().split('T')[0];
   travelDateInput.setAttribute('min', today);
 });
+
