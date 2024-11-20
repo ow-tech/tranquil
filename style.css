@@ -110,18 +110,347 @@
     transform: translateX(-70%);
 }
 
-/* Footer */
-.footer{
-    background-color: #214b4f;
-    color: white;
-    height: 40vh;
-    margin-top: 10rem;
+
+/*----------------------------about page css--------------------------*/
+
+#hero1 { 
+  margin: 5%;
+  text-align: center;
 }
-.custom-link { 
-    display: block; 
-     color: white; 
-     text-decoration: none; 
-      margin-bottom: 5px; 
+
+#hero2, #hero3 {
+  margin: 6%;
+}
+
+.about-row {
+  display: flex;
+  gap: 20px; /* Adds space between columns */
+  flex-wrap: wrap; /* Ensures responsive layout on smaller screens */
+}
+
+.about-section1, .about-section2, .about-section11, .about-section12 {
+  flex: 1;
+}
+
+.about-section2 img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+#hero3 {
+  border: 0.7px solid rgba(0, 0, 0, 0.3); /* Corrected border color */
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .about-row {
+    flex-direction: column; /* Stack columns vertically on small screens */
+  }
+}
+
+/*----------------------------bookTransfers page css--------------------------*/
+/* General styling for table */
+.table-form {
+  font-family: Arial, Helvetica, sans-serif, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+table {
+  width: 100%;
+  max-width: 600px;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+th, td {
+  padding: 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+th {
+  color: #fff;
+  background-color: #F1844C;
+ font-weight: bold;
+ font-size: 30px;
+  text-align: center;
+}
+input, select, form-button {
+  width: 100%;
+  padding: 8px;
+  padding-right: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+form-button {
+  background-color: #214B4F;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px
+}
+form-button:hover {
+  background-color: #F1844C;
+  transition: 0.3s;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 600px) {
+  table {
+      width: 90%;
+      font-size: 14px;
+  }
+  td, th {
+      padding: 10px;
+  }
+  input, select, button {
+      font-size: 12px;
+  }
+}
+
+/* ----------------------rent a car ------------------- */
+
+/* General styling */
+rent-body {
+  font-family: Arial, sans-serif;
+  background-color: var(--beige);
+  color: var(--dark-teal);
+}
+
+/* Header styling */
+rent-header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: var(--dark-teal);
+  color: var(--beige);
+}
+
+rent-header h1 {
+  font-size: 2rem;
+  color: var(--green);
+}
+
+rent-header p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0.5rem auto;
+}
+
+/* Car card styling */
+.car-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--beige);
+  border: 1px solid var(--dark-teal);
+  border-radius: 8px;
+  padding: 1rem;
+  height: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.car-section img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--dark-teal);
+  margin-bottom: 0.75rem;
+}
+
+.car-section .card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.car-details h3 {
+  color: var(--red);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.car-details p {
+  font-size: 0.9rem;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .car-section {
+      width: 100%;
+  }
+}
+
+/*-------------------------------footer Css --------------------*/
+.footer {
+  background-color: #214b4f; /* Footer background */
+  color: white; /* Default text color */
+  padding: 40px 0;
+}
+.logo-text{
+  font-size: 27px;
+  font-weight: bold;
+  font-family:  'Dancing Script', cursive;
+  transition: 0.5s;
+}
+
+.logo-text:hover {
+  color: #E77F55;
+}
+/* Footer Column Headings */
+footer-h3 {
+  color: #E77F55; /* Heading color */
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.sign-text {
+font-size: 18px;
+}
+
+/* Links */
+.footer a {
+  color: white; /* Link text color */
+  text-decoration: none; /* Remove underline */
+  font-size: 18px;
+}
+
+/* Quick Links Section */
+.footer .list-unstyled {
+  list-style: none; 
+}
+
+.footer .list-unstyled li {
+  margin-bottom: 15px;
+}
+
+/* Sign Up and Sign In Buttons */
+.btn-signup, .btn-signin {
+  background-color: #e55151; /* Button color */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 4px; /* Slightly rounded corners */
+  transition: 0.3s;
+}
+
+/* Hover Effect for Buttons */
+.btn-signup:hover, .btn-signin:hover {
+  background-color: #E77F55; /* Lighter red on hover */
+}
+
+/* Divider Line */
+.divider {
+  width: 80%;
+  height: 0.7px;
+  background-color: #fff; /* White color for divider */
+  margin: 40px auto;
+}
+
+/* Copyright Text */
+.footer .text-center p {
+  color: white;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* Column and Row Adjustments for Responsiveness */
+.footer .col-md-3 {
+  margin-bottom: 20px;
+}
+
+/* Make footer content vertically aligned in the row */
+.footer .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+/* Media Queries for Small Screens */
+
+/* Small screens (smartphones, tablets) */
+@media (max-width: 768px) {
+  .footer .row {
+      flex-direction: column; /* Stack columns vertically on small screens */
+      align-items: center;
+  }
+
+  .footer .col-md-3 {
+      text-align: center;
+      margin-bottom: 20px;
+  }
+
+  /* Reduce padding and font size for mobile */
+  .footer {
+      padding: 20px 0;
+  }
+
+  .footer h5 {
+      font-size: 16px;
+  }
+
+  .footer a {
+      font-size: 13px;
+  }
+
+  .btn-signup, .btn-signin {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+
+  /* Make social icons smaller on small screens */
+  .footer .social-iconss a {
+      font-size: 18px;
+      margin: 0 10px;
+  }
+
+  /* Center the copyright text */
+  .footer .text-center p {
+      font-size: 13px;
+      margin-top: 15px;
+  }
+
+  /* Adjust the divider width for smaller screens */
+  .divider {
+      width: 80%;
+  }
+}
+
+/* Extra Small Screens (e.g., very small phones) */
+@media (max-width: 480px) {
+  .footer h5 {
+      font-size: 14px;
+  }
+
+  .footer .list-unstyled li {
+      margin-bottom: 8px;
+  }
+
+  .footer .col-md-3 {
+      padding: 0 10px;
+  }
+
+  .btn-signup, .btn-signin {
+      font-size: 13px;
+      padding: 6px 14px;
+  }
+
+  .footer img {
+      max-width: 120px; /* Make the logo smaller */
+  }
+
+  
 }
 .navbar-brand{
   /* display: none; */
