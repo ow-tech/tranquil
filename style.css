@@ -896,3 +896,185 @@ font-size: 18px;
 
   
 }
+
+
+/*-----------------------our destinations--------------------*/
+/* Color palette */
+.btn-book-now {
+  background-color: #214B4F;
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-book-now:hover {
+  background-color: #F1844C;
+  color: #fff;
+}
+
+.btn-see-more {
+  background-color: #214B4F;
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-see-more:hover {
+  background-color: #F1844C;
+}
+
+/* Custom styles */
+.destination-heading {
+  color: #214B4F;
+  text-align: center;
+  margin: 20px 0;
+}
+
+
+ /* Custom Styles */
+.unique-column23 {
+  text-align: center;
+  margin-bottom: 20px;
+  max-width: 100%;
+  display: flex;
+  padding: 15px;
+  border: 2px solid #E55151;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.package-selection {
+  margin-bottom: 10px;
+
+}
+
+form-select {
+  width: 80%;
+}
+
+.mt-2 {
+  margin-top: 10px;
+}
+
+/* Centering the rows and columns */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.row22 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers columns horizontally */
+  gap: 15px; /* Adds space between columns */
+}
+
+.unique-column {
+  text-align: center;
+  margin-bottom: 20px;
+  border: 1px solid #808080; /* Border for each column */
+  border-radius: 10px; /* Optional: Rounded corners */
+  padding: 15px; /* Spacing inside the column border */
+  width: 30%; /* Ensures 3 columns per row */
+}
+
+.destination-image {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: none; /* Border for image placeholders */
+  padding: 5px;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column; /* Stacks columns vertically on smaller screens */
+    padding: 0 15px; /* Adds horizontal padding to the row to avoid touching the edges */
+  }
+
+  .unique-column {
+    width: 100%; /* Makes each column take full width on small screens */
+    padding: 15px; /* Adds padding inside each column */
+    margin-bottom: 15px; /* Adds space between columns */
+  }
+
+  .destination-image {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: none; /* Border for image placeholders */
+    padding: 10px; /* Adds space around images */
+    box-sizing: border-box; /* Includes padding in the width calculation */
+  }
+}
+
+/* ----------------------Mombasa south Coast------------------- */
+
+/* General Styles */
+.section-titleT {
+  text-align: center;
+  font-size: 60px;
+  margin-bottom: 20px;
+  color: #214B4F; /* Earthy green tone */
+}
+.typewriterT {
+  font-size: 60px;
+}
+.highlightT {
+  color: #F1844C; /* Tomato accent for emphasis */
+}
+.btn-customT {
+  background-color: #214B4F;
+  font-size: 24px;
+  color: white;
+  border-radius: 25px;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+.btn-customT:hover {
+  background-color: #F1844C;
+  color: white;
+}
+
+/* Images and Alignment */
+.image-containerT img {
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 1, 0.3);
+}
+
+.mb-55 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.mt-22 {
+  font-size: 24px;
+}
+.mt-33 {
+  font-size: 24px;
+}
+/* Typewriter Animation */
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+.typewriterT {
+  overflow: hidden;
+  font-size: 18px;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typewriter 4s steps(30, end);
+}
+
+/* Responsive Styles */
+@media (max-width: 576px) {
+  .section-titleT {
+      font-size: 1.5rem;
+  }
+  .btn-customT {
+      padding: 8px 15px;
+  }
+}
+

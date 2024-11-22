@@ -101,8 +101,6 @@ function validateForm(e, formID) {
   // });
   
   
- 
- 
   // Validate Captcha
   const captchaAnswer = form.querySelector(`#captchaAnswer${formID}`).value;
   const correctAnswer = form.querySelector(`#captchaAnswer${formID}`).dataset.correctAnswer;
@@ -144,6 +142,41 @@ function validateForm(e, formID) {
 
   return true;
 }
+
+// travel destination
+
+// JavaScript to handle the auto-selection feature and persist the selected action
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Handle changes for each package selection dropdown
+  const packageSelect1 = document.getElementById('package1');
+  const selectedPackage1 = document.getElementById('selected-package1');
+  
+  const packageSelect2 = document.getElementById('package2');
+  const selectedPackage2 = document.getElementById('selected-package2');
+  
+  const packageSelect3 = document.getElementById('package3');
+  const selectedPackage3 = document.getElementById('selected-package3');
+  
+  // Event listener for Package 1 selection
+  packageSelect1.addEventListener('change', function() {
+    const selectedValue = packageSelect1.value;
+    selectedPackage1.textContent = selectedValue || "None";
+  });
+
+  // Event listener for Package 2 selection
+  packageSelect2.addEventListener('change', function() {
+    const selectedValue = packageSelect2.value;
+    selectedPackage2.textContent = selectedValue || "None";
+  });
+
+  // Event listener for Package 3 selection
+  packageSelect3.addEventListener('change', function() {
+    const selectedValue = packageSelect3.value;
+    selectedPackage3.textContent = selectedValue || "None";
+  });
+});
+
 
 
 
