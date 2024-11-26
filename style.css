@@ -298,6 +298,7 @@ rent-header p {
   background-repeat: no-repeat;
   height: 90vh;
   color: #fff;
+ 
 }
 
 .containerzz{
@@ -718,168 +719,14 @@ rent-header p {
   }
 }
 
-/*-------------------------------footer Css --------------------*/
-.footer {
-  background-color: #214b4f; /* Footer background */
-  color: white; /* Default text color */
-  padding: 40px 0;
-}
-.logo-text{
-  font-size: 27px;
-  font-weight: bold;
-  font-family:  'Dancing Script', cursive;
-  transition: 0.5s;
-}
-
-.logo-text:hover {
-  color: #E77F55;
-}
-/* Footer Column Headings */
-footer-h3 {
-  color: #E77F55; /* Heading color */
-  font-weight: bold;
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-.sign-text {
-font-size: 18px;
-}
-
-/* Links */
-.footer a {
-  color: white; /* Link text color */
-  text-decoration: none; /* Remove underline */
-  font-size: 18px;
-}
-
-/* Quick Links Section */
-.footer .list-unstyled {
-  list-style: none; 
-}
-
-.footer .list-unstyled li {
-  margin-bottom: 15px;
-}
-
-/* Sign Up and Sign In Buttons */
-.btn-signup, .btn-signin {
-  background-color: #e55151; /* Button color */
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  margin-right: 10px;
-  cursor: pointer;
-  font-size: 18px;
-  border-radius: 4px; /* Slightly rounded corners */
-  transition: 0.3s;
-}
-
-/* Hover Effect for Buttons */
-.btn-signup:hover, .btn-signin:hover {
-  background-color: #E77F55; /* Lighter red on hover */
-}
-
 /* Divider Line */
 .divider {
   width: 80%;
   height: 0.7px;
   background-color: #fff; /* White color for divider */
-  margin: 40px auto;
+  margin:150px auto;
 }
 
-/* Copyright Text */
-.footer .text-center p {
-  color: white;
-  font-size: 18px;
-  margin-top: 20px;
-}
-
-/* Column and Row Adjustments for Responsiveness */
-.footer .col-md-3 {
-  margin-bottom: 20px;
-}
-
-/* Make footer content vertically aligned in the row */
-.footer .row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-/* Media Queries for Small Screens */
-
-/* Small screens (smartphones, tablets) */
-@media (max-width: 768px) {
-  .footer .row {
-      flex-direction: column; /* Stack columns vertically on small screens */
-      align-items: center;
-  }
-
-  .footer .col-md-3 {
-      text-align: center;
-      margin-bottom: 20px;
-  }
-
-  /* Reduce padding and font size for mobile */
-  .footer {
-      padding: 20px 0;
-  }
-
-  .footer h5 {
-      font-size: 16px;
-  }
-
-  .footer a {
-      font-size: 13px;
-  }
-
-  .btn-signup, .btn-signin {
-      font-size: 14px;
-      padding: 8px 16px;
-  }
-
-  /* Make social icons smaller on small screens */
-  .footer .social-iconss a {
-      font-size: 18px;
-      margin: 0 10px;
-  }
-
-  /* Center the copyright text */
-  .footer .text-center p {
-      font-size: 13px;
-      margin-top: 15px;
-  }
-
-  /* Adjust the divider width for smaller screens */
-  .divider {
-      width: 80%;
-  }
-}
-
-/* Extra Small Screens (e.g., very small phones) */
-@media (max-width: 480px) {
-  .footer h5 {
-      font-size: 14px;
-  }
-
-  .footer .list-unstyled li {
-      margin-bottom: 8px;
-  }
-
-  .footer .col-md-3 {
-      padding: 0 10px;
-  }
-
-  .btn-signup, .btn-signin {
-      font-size: 13px;
-      padding: 6px 14px;
-  }
-
-  .footer img {
-      max-width: 120px; /* Make the logo smaller */
-  }
-
-  
-}
 
 
 /*-----------------------our destinations--------------------*/
@@ -1059,3 +906,13 @@ font-size: xx-large;
   }
 }
 
+/*----------------------see more destinations-------------------*/
+
+.moredests{
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+  text-align: center; /* Optional: Center-align text */
+  flex-direction: column; /* Stack the sentences vertically */
+}
