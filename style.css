@@ -291,116 +291,101 @@ rent-header p {
 }
 
 /*-------------------------------footer Css --------------------*/
-.footer {
-  background-color: #214b4f; /* Footer background */
-  color: white; /* Default text color */
-  padding: 40px 0;
+.footer88 {
+  background-image: url(https://res.cloudinary.com/dameisncm/image/upload/v1732265421/website_footer_xq6xaf.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90vh;
+  color: #fff;
+ 
 }
-.logo-text{
+
+.containerzz{
+  margin-top: 40vh;
+}
+.footer * {
+  margin-bottom: 20px; /* Ensure spacing for all elements */
+}
+
+.container-fluid {
+  padding: 0; /* Remove padding to stretch content to screen edges */
+}
+
+.row {
+  margin: 0; /* Remove row margin */
+}
+
+footer-h3 {
+  color: #E77F55;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.logo-text {
   font-size: 27px;
   font-weight: bold;
-  font-family:  'Dancing Script', cursive;
+  font-family: 'Dancing Script', cursive;
   transition: 0.5s;
+  color: #fff;
 }
 
 .logo-text:hover {
   color: #E77F55;
 }
-/* Footer Column Headings */
-footer-h3 {
-  color: #E77F55; /* Heading color */
-  font-weight: bold;
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-.sign-text {
-font-size: 18px;
-}
 
-/* Links */
-.footer a {
-  color: white; /* Link text color */
-  text-decoration: none; /* Remove underline */
-  font-size: 18px;
-}
-
-/* Quick Links Section */
-.footer .list-unstyled {
-  list-style: none; 
-}
-
-.footer .list-unstyled li {
-  margin-bottom: 15px;
-}
-
-/* Sign Up and Sign In Buttons */
-.btn-signup, .btn-signin {
-  background-color: #e55151; /* Button color */
+.btn-signup,
+.btn-signin {
+  background-color: #e55151;
   border: none;
   color: white;
   padding: 10px 20px;
   margin-right: 10px;
   cursor: pointer;
   font-size: 18px;
-  border-radius: 4px; /* Slightly rounded corners */
+  border-radius: 4px;
   transition: 0.3s;
 }
 
-/* Hover Effect for Buttons */
-.btn-signup:hover, .btn-signin:hover {
-  background-color: #E77F55; /* Lighter red on hover */
+.btn-signup:hover,
+.btn-signin:hover {
+  background-color: #E77F55;
 }
 
-/* Divider Line */
 .divider {
-  width: 80%;
-  height: 0.7px;
-  background-color: #fff; /* White color for divider */
-  margin: 40px auto;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  margin: 0 auto;
 }
 
-/* Copyright Text */
-.footer .text-center p {
-  color: white;
-  font-size: 18px;
-  margin-top: 20px;
-}
-
-/* Column and Row Adjustments for Responsiveness */
-.footer .col-md-3 {
-  margin-bottom: 20px;
-}
-
-/* Make footer content vertically aligned in the row */
-.footer .row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
 /* Media Queries for Small Screens */
 
 /* Small screens (smartphones, tablets) */
+
+
 @media (max-width: 768px) {
-  .footer .row {
+  .footer88 .row {
       flex-direction: column; /* Stack columns vertically on small screens */
       align-items: center;
   }
 
-  .footer .col-md-3 {
+  .footer88 .col-md-3 {
       text-align: center;
       margin-bottom: 20px;
   }
 
   /* Reduce padding and font size for mobile */
-  .footer {
+  .footer88 {
       padding: 20px 0;
   }
 
-  .footer h5 {
+  .footer88 h5 {
       font-size: 16px;
   }
 
-  .footer a {
+  .footer88 a {
       font-size: 13px;
   }
 
@@ -410,13 +395,13 @@ font-size: 18px;
   }
 
   /* Make social icons smaller on small screens */
-  .footer .social-iconss a {
+  .footer88 .social-iconss a {
       font-size: 18px;
       margin: 0 10px;
   }
 
   /* Center the copyright text */
-  .footer .text-center p {
+  .footer88 .text-center p {
       font-size: 13px;
       margin-top: 15px;
   }
@@ -429,15 +414,15 @@ font-size: 18px;
 
 /* Extra Small Screens (e.g., very small phones) */
 @media (max-width: 480px) {
-  .footer h5 {
+  .footer88 h5 {
       font-size: 14px;
   }
 
-  .footer .list-unstyled li {
+  .footer88 .list-unstyled li {
       margin-bottom: 8px;
   }
 
-  .footer .col-md-3 {
+  .footer88 .col-md-3 {
       padding: 0 10px;
   }
 
@@ -446,7 +431,7 @@ font-size: 18px;
       padding: 6px 14px;
   }
 
-  .footer img {
+  .footer88 img {
       max-width: 120px; /* Make the logo smaller */
   }
 
@@ -734,168 +719,14 @@ rent-header p {
   }
 }
 
-/*-------------------------------footer Css --------------------*/
-.footer {
-  background-color: #214b4f; /* Footer background */
-  color: white; /* Default text color */
-  padding: 40px 0;
-}
-.logo-text{
-  font-size: 27px;
-  font-weight: bold;
-  font-family:  'Dancing Script', cursive;
-  transition: 0.5s;
-}
-
-.logo-text:hover {
-  color: #E77F55;
-}
-/* Footer Column Headings */
-footer-h3 {
-  color: #E77F55; /* Heading color */
-  font-weight: bold;
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-.sign-text {
-font-size: 18px;
-}
-
-/* Links */
-.footer a {
-  color: white; /* Link text color */
-  text-decoration: none; /* Remove underline */
-  font-size: 18px;
-}
-
-/* Quick Links Section */
-.footer .list-unstyled {
-  list-style: none; 
-}
-
-.footer .list-unstyled li {
-  margin-bottom: 15px;
-}
-
-/* Sign Up and Sign In Buttons */
-.btn-signup, .btn-signin {
-  background-color: #e55151; /* Button color */
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  margin-right: 10px;
-  cursor: pointer;
-  font-size: 18px;
-  border-radius: 4px; /* Slightly rounded corners */
-  transition: 0.3s;
-}
-
-/* Hover Effect for Buttons */
-.btn-signup:hover, .btn-signin:hover {
-  background-color: #E77F55; /* Lighter red on hover */
-}
-
 /* Divider Line */
 .divider {
   width: 80%;
   height: 0.7px;
   background-color: #fff; /* White color for divider */
-  margin: 40px auto;
+  margin:150px auto;
 }
 
-/* Copyright Text */
-.footer .text-center p {
-  color: white;
-  font-size: 18px;
-  margin-top: 20px;
-}
-
-/* Column and Row Adjustments for Responsiveness */
-.footer .col-md-3 {
-  margin-bottom: 20px;
-}
-
-/* Make footer content vertically aligned in the row */
-.footer .row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-/* Media Queries for Small Screens */
-
-/* Small screens (smartphones, tablets) */
-@media (max-width: 768px) {
-  .footer .row {
-      flex-direction: column; /* Stack columns vertically on small screens */
-      align-items: center;
-  }
-
-  .footer .col-md-3 {
-      text-align: center;
-      margin-bottom: 20px;
-  }
-
-  /* Reduce padding and font size for mobile */
-  .footer {
-      padding: 20px 0;
-  }
-
-  .footer h5 {
-      font-size: 16px;
-  }
-
-  .footer a {
-      font-size: 13px;
-  }
-
-  .btn-signup, .btn-signin {
-      font-size: 14px;
-      padding: 8px 16px;
-  }
-
-  /* Make social icons smaller on small screens */
-  .footer .social-iconss a {
-      font-size: 18px;
-      margin: 0 10px;
-  }
-
-  /* Center the copyright text */
-  .footer .text-center p {
-      font-size: 13px;
-      margin-top: 15px;
-  }
-
-  /* Adjust the divider width for smaller screens */
-  .divider {
-      width: 80%;
-  }
-}
-
-/* Extra Small Screens (e.g., very small phones) */
-@media (max-width: 480px) {
-  .footer h5 {
-      font-size: 14px;
-  }
-
-  .footer .list-unstyled li {
-      margin-bottom: 8px;
-  }
-
-  .footer .col-md-3 {
-      padding: 0 10px;
-  }
-
-  .btn-signup, .btn-signin {
-      font-size: 13px;
-      padding: 6px 14px;
-  }
-
-  .footer img {
-      max-width: 120px; /* Make the logo smaller */
-  }
-
-  
-}
 
 
 /*-----------------------our destinations--------------------*/
@@ -1015,12 +846,9 @@ form-select {
 /* General Styles */
 .section-titleT {
   text-align: center;
-  font-size: 60px;
+font-size: xx-large;
   margin-bottom: 20px;
   color: #214B4F; /* Earthy green tone */
-}
-.typewriterT {
-  font-size: 60px;
 }
 .highlightT {
   color: #F1844C; /* Tomato accent for emphasis */
@@ -1078,3 +906,13 @@ form-select {
   }
 }
 
+/*----------------------see more destinations-------------------*/
+
+.moredests{
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+  text-align: center; /* Optional: Center-align text */
+  flex-direction: column; /* Stack the sentences vertically */
+}
