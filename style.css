@@ -585,13 +585,13 @@ a:hover{
   box-shadow: 0px 5px 10px rgba(90, 116, 148, 0.3);
   padding: 40px;
   border-radius: 6px;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
-.form-area .form-inner {
+/* .form-area .form-inner {
   width: 100%;
-}
+} */
 .form-control {
   display: block;
   width: 100%;
