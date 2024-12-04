@@ -79,6 +79,175 @@ if (exampleModal) {
 // });
 
 
+// document.addEventListener('DOMContentLoaded', () => {
+//   const fromSelect = document.getElementById('from-select');
+//   const toSelect = document.getElementById('to-select');
+//   const fromInput = document.getElementById('from-input');
+//   const toInput = document.getElementById('to-input');
+
+//   // Array of all available options for both selects
+//   const allOptions = ["One", "Two", "Three", "Four", "Other"];
+
+//   // Exclusion rules - which options should be disabled based on selection in 'from-select'
+//   const exclusionRules = {
+//     "One": ["One"],
+//     "Two": ["Two"],
+//     "Three": ["Three"],
+//     "Four": ["Four"]
+//   };
+
+//   // Function to populate the select options dynamically
+//   function populateSelect(selectElement) {
+//     selectElement.innerHTML = ''; // Clear current options
+//     allOptions.forEach(option => {
+//       const optionElement = document.createElement("option");
+//       optionElement.value = option;
+//       optionElement.textContent = option;
+//       selectElement.appendChild(optionElement);
+//     });
+//   }
+
+//   // Function to toggle the input display and handle the name attributes for 'from' and 'to'
+//   function toggleInputDisplay(selectElement, inputElement, selectName) {
+//     if (selectElement.value === 'Other') {
+//       inputElement.style.display = 'block';
+//       inputElement.name = selectName; // Set name for input
+//       inputElement.required = true;
+//       selectElement.name = ''; // Clear name for select
+//     } else {
+//       inputElement.style.display = 'none';
+//       inputElement.name = ''; // Clear name for input
+//       inputElement.required = false;
+//       selectElement.name = selectName; // Restore name for select
+//     }
+//   }
+
+//   // Function to disable/enable options based on the exclusion rules
+//   function updateToOptions() {
+//     const selectedFrom = fromSelect.value;
+
+//     // Enable all options initially
+//     for (const option of toSelect.options) {
+//       option.disabled = false;  // Enable all options
+//     }
+
+//     // If "Other" is selected in 'from-select', don't disable anything in 'to-select'
+//     if (selectedFrom !== 'Other' && exclusionRules[selectedFrom]) {
+//       // Disable the options based on exclusion rules
+//       for (const option of toSelect.options) {
+//         if (exclusionRules[selectedFrom].includes(option.value)) {
+//           option.disabled = true;  // Disable matching options
+//         }
+//       }
+//     }
+//   }
+
+//   // Event listener for 'from-select'
+//   fromSelect.addEventListener('change', () => {
+//     toggleInputDisplay(fromSelect, fromInput, 'from');
+//     updateToOptions(); // Update the 'to-select' options based on the 'from-select' value
+//   });
+
+//   // Event listener for 'to-select'
+//   toSelect.addEventListener('change', () => {
+//     toggleInputDisplay(toSelect, toInput, 'to');
+//   });
+
+//   // Initialize the state by populating select options and setting event listeners
+//   populateSelect(fromSelect);
+//   populateSelect(toSelect);
+
+//   // Initialize input fields visibility and options
+//   toggleInputDisplay(fromSelect, fromInput, 'from');
+//   toggleInputDisplay(toSelect, toInput, 'to');
+//   updateToOptions(); // Ensure options are updated on page load
+// });
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const fromSelect = document.getElementById('from-select');
+//   const toSelect = document.getElementById('to-select');
+//   const fromInput = document.getElementById('from-input');
+//   const toInput = document.getElementById('to-input');
+
+//   // Array of all available options for both selects
+//   const allOptions = ["One", "Two", "Three", "Four", "Other"];
+
+//   // Exclusion rules - which options should be disabled based on selection in 'from-select'
+//   const exclusionRules = {
+//     "One": ["One"],
+//     "Two": ["Two"],
+//     "Three": ["Three"],
+//     "Four": ["Four"]
+//   };
+
+//   // Function to populate the select options dynamically
+//   function populateSelect(selectElement) {
+//     selectElement.innerHTML = ''; // Clear current options
+//     allOptions.forEach(option => {
+//       const optionElement = document.createElement("option");
+//       optionElement.value = option;
+//       optionElement.textContent = option;
+//       selectElement.appendChild(optionElement);
+//     });
+//   }
+
+//   // Function to toggle the input display and handle the name attributes for 'from' and 'to'
+//   function toggleInputDisplay(selectElement, inputElement, selectName) {
+//     if (selectElement.value === 'Other') {
+//       inputElement.style.display = 'block';
+//       inputElement.name = selectName; // Set name for input
+//       inputElement.required = true;
+//       selectElement.name = ''; // Clear name for select
+//     } else {
+//       inputElement.style.display = 'none';
+//       inputElement.name = ''; // Clear name for input
+//       inputElement.required = false;
+//       selectElement.name = selectName; // Restore name for select
+//     }
+//   }
+
+//   // Function to disable/enable options based on the exclusion rules
+//   function updateToOptions() {
+//     const selectedFrom = fromSelect.value;
+
+//     // Enable all options initially
+//     for (const option of toSelect.options) {
+//       option.disabled = false;  // Enable all options
+//     }
+
+//     // If "Other" is selected in 'from-select', don't disable anything in 'to-select'
+//     if (selectedFrom !== 'Other' && exclusionRules[selectedFrom]) {
+//       // Disable the options based on exclusion rules
+//       for (const option of toSelect.options) {
+//         if (exclusionRules[selectedFrom].includes(option.value)) {
+//           option.disabled = true;  // Disable matching options
+//         }
+//       }
+//     }
+//   }
+
+//   // Event listener for 'from-select'
+//   fromSelect.addEventListener('change', () => {
+//     toggleInputDisplay(fromSelect, fromInput, 'from');
+//     updateToOptions(); // Update the 'to-select' options based on the 'from-select' value
+//   });
+
+//   // Event listener for 'to-select'
+//   toSelect.addEventListener('change', () => {
+//     toggleInputDisplay(toSelect, toInput, 'to');
+//   });
+
+//   // Initialize the state by populating select options and setting event listeners
+//   populateSelect(fromSelect);
+//   populateSelect(toSelect);
+
+//   // Initialize input fields visibility and options
+//   toggleInputDisplay(fromSelect, fromInput, 'from');
+//   toggleInputDisplay(toSelect, toInput, 'to');
+//   updateToOptions(); // Ensure options are updated on page load
+// });
+
 document.addEventListener('DOMContentLoaded', () => {
   const fromSelect = document.getElementById('from-select');
   const toSelect = document.getElementById('to-select');
@@ -97,8 +266,18 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Function to populate the select options dynamically
-  function populateSelect(selectElement) {
+  function populateSelect(selectElement, defaultText) {
     selectElement.innerHTML = ''; // Clear current options
+
+    // Add the default placeholder option
+    const defaultOption = document.createElement("option");
+    defaultOption.value = '';
+    defaultOption.disabled = true;
+    defaultOption.selected = true;
+    defaultOption.textContent = defaultText;
+    selectElement.appendChild(defaultOption);
+
+    // Add the other options dynamically
     allOptions.forEach(option => {
       const optionElement = document.createElement("option");
       optionElement.value = option;
@@ -154,14 +333,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Initialize the state by populating select options and setting event listeners
-  populateSelect(fromSelect);
-  populateSelect(toSelect);
+  populateSelect(fromSelect, 'Select Starting Point');
+  populateSelect(toSelect, 'Select Destination');
 
   // Initialize input fields visibility and options
   toggleInputDisplay(fromSelect, fromInput, 'from');
   toggleInputDisplay(toSelect, toInput, 'to');
   updateToOptions(); // Ensure options are updated on page load
 });
+
+
 
 
 
@@ -308,6 +489,8 @@ document.addEventListener("DOMContentLoaded", function() {
     selectedPackage3.textContent = selectedValue || "None";
   });
 });
+
+
 
 
 
