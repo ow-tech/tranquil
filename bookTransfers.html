@@ -17,8 +17,8 @@
 
 
   <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6 mt-5 mb-5">
+    <div class=" justify-content-center">
+        <div class=" mt-5 mb-5">
           <div class="text-center th">
             <h4 class="text-center th">Booking Form</h4>
 
@@ -76,34 +76,65 @@
                           
                           required>
                       </div>
+                      <!-- control show of from input if Other is selected -->
                       <div class="form-group">
-                        <input 
-                        type="text" 
-                        id="from" 
-                        name="from" 
-                        placeholder="Start From" 
-                        class="form-control" 
-                        required>
+                        <select class="form-select mb-3 input-font-size-sm" id="from-select" name="from-select" required aria-label="Default select example">
+                            <option value="" disabled selected>Open this select menu</option>
+                            <!-- <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="Other">Other</option> -->
+                        </select>
                     </div>
-
+                    
                     <div class="form-group">
-                      <input 
-                      type="text" 
-                      id="to" 
-                      name="to" 
-                      placeholder="Enter Destination" 
-                      class="form-control" 
-                      required>
-                  </div>
+                        <input 
+                            type="text" 
+                            id="from-input" 
+                            name="from" 
+                            placeholder="Start From" 
+                            class="form-control" 
+                            style="display: none;" 
+                            required>
+                    </div>
+                    
+                    <div class="form-group ">
+                        <select class="form-select mb-3 input-font-size-sm" id="to-select" name="to-select" required aria-label="Default select example">
+                            <option value="" disabled selected>Open this select menu</option>
+                            <!-- <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="Other">Other</option> -->
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="to-input" 
+                            name="to" 
+                            placeholder="Enter Destination" 
+                            class="form-control" 
+                            style="display: none;" 
+                            required>
+                    </div>
+                    
+                    
                   <div class="form-group">
                     <input
                   type="date" 
                   id="travelDate" 
-                  name="TransferDate" 
+                  name="travelDate" 
                   class="form-control" 
                   min="<?= date('Y-m-d'); ?>" 
                   required>
                 </div>
+                <div class="form-group">
+                  <input 
+                      type="time" 
+                      name="travelTime" 
+                      id="travelTime"
+                      class="form-control" 
+                      required>
+              </div>
                 <div class="form-group">
                   <span id="captchaQuestionbookTransfers"> </span>
                   <input 

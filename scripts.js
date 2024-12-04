@@ -2,16 +2,17 @@
 // our fleet modal
 const input = document.querySelector("#phone");
 // console.log('input, :', input)
-window.intlTelInput(input, {
-  loadUtilsOnInit: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.7.0/build/js/utils.js",
-  initialCountry: "ke",
-	separateDialCode: true,
-});
+// Initialize intlTelInput
 const iti = window.intlTelInput(input, {
-  loadUtilsOnInit: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.7.0/build/js/utils.js",
+  utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.7.0/build/js/utils.js",
   initialCountry: "ke",
-  separateDialCode: true,
+  separateDialCode: true
 });
+// const iti = window.intlTelInput(input, {
+//   loadUtilsOnInit: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.7.0/build/js/utils.js",
+//   initialCountry: "ke",
+// 	separateDialCode: true
+// });
 
 window.onload = generateCaptchasForAllForms;
 
@@ -33,6 +34,136 @@ if (exampleModal) {
     modalBodyInput.value = recipient
   })
 }
+
+// control Selection of Others inputs
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const fromSelect = document.getElementById('from-select');
+//   const toSelect = document.getElementById('to-select');
+//   const fromInput = document.getElementById('from-input');
+//   const toInput = document.getElementById('to-input');
+
+//   // Event listener for 'from-select'
+//   fromSelect.addEventListener('change', () => {
+//       if (fromSelect.value === 'Other') {
+//           fromInput.style.display = 'block';
+//           fromInput.name = 'from';
+//           fromInput.required = true;
+
+//           fromSelect.name = ''; // Clear select name
+//       } else {
+//           fromInput.style.display = 'none';
+//           fromInput.name = ''; // Clear input name
+//           fromInput.required = false;
+
+//           fromSelect.name = 'from'; // Restore select name
+//       }
+//   });
+
+//   // Event listener for 'to-select'
+//   toSelect.addEventListener('change', () => {
+//       if (toSelect.value === 'Other') {
+//           toInput.style.display = 'block';
+//           toInput.name = 'to';
+//           toInput.required = true;
+
+//           toSelect.name = ''; // Clear select name
+//       } else {
+//           toInput.style.display = 'none';
+//           toInput.name = ''; // Clear input name
+//           toInput.required = false;
+
+//           toSelect.name = 'to'; // Restore select name
+//       }
+//   });
+// });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const fromSelect = document.getElementById('from-select');
+  const toSelect = document.getElementById('to-select');
+  const fromInput = document.getElementById('from-input');
+  const toInput = document.getElementById('to-input');
+
+  // Array of all available options for both selects
+  const allOptions = ["One", "Two", "Three", "Four", "Other"];
+
+  // Exclusion rules - which options should be disabled based on selection in 'from-select'
+  const exclusionRules = {
+    "One": ["One"],
+    "Two": ["Two"],
+    "Three": ["Three"],
+    "Four": ["Four"]
+  };
+
+  // Function to populate the select options dynamically
+  function populateSelect(selectElement) {
+    selectElement.innerHTML = ''; // Clear current options
+    allOptions.forEach(option => {
+      const optionElement = document.createElement("option");
+      optionElement.value = option;
+      optionElement.textContent = option;
+      selectElement.appendChild(optionElement);
+    });
+  }
+
+  // Function to toggle the input display and handle the name attributes for 'from' and 'to'
+  function toggleInputDisplay(selectElement, inputElement, selectName) {
+    if (selectElement.value === 'Other') {
+      inputElement.style.display = 'block';
+      inputElement.name = selectName; // Set name for input
+      inputElement.required = true;
+      selectElement.name = ''; // Clear name for select
+    } else {
+      inputElement.style.display = 'none';
+      inputElement.name = ''; // Clear name for input
+      inputElement.required = false;
+      selectElement.name = selectName; // Restore name for select
+    }
+  }
+
+  // Function to disable/enable options based on the exclusion rules
+  function updateToOptions() {
+    const selectedFrom = fromSelect.value;
+
+    // Enable all options initially
+    for (const option of toSelect.options) {
+      option.disabled = false;  // Enable all options
+    }
+
+    // If "Other" is selected in 'from-select', don't disable anything in 'to-select'
+    if (selectedFrom !== 'Other' && exclusionRules[selectedFrom]) {
+      // Disable the options based on exclusion rules
+      for (const option of toSelect.options) {
+        if (exclusionRules[selectedFrom].includes(option.value)) {
+          option.disabled = true;  // Disable matching options
+        }
+      }
+    }
+  }
+
+  // Event listener for 'from-select'
+  fromSelect.addEventListener('change', () => {
+    toggleInputDisplay(fromSelect, fromInput, 'from');
+    updateToOptions(); // Update the 'to-select' options based on the 'from-select' value
+  });
+
+  // Event listener for 'to-select'
+  toSelect.addEventListener('change', () => {
+    toggleInputDisplay(toSelect, toInput, 'to');
+  });
+
+  // Initialize the state by populating select options and setting event listeners
+  populateSelect(fromSelect);
+  populateSelect(toSelect);
+
+  // Initialize input fields visibility and options
+  toggleInputDisplay(fromSelect, fromInput, 'from');
+  toggleInputDisplay(toSelect, toInput, 'to');
+  updateToOptions(); // Ensure options are updated on page load
+});
+
+
 
 
 // Restrict travel date to upcoming dates only
@@ -90,6 +221,7 @@ const formIDs = ['bookTransfers','carRental'];
 function validateForm(e, formID) {
   e.preventDefault();
   const form = e.target;
+
   let phone_number= iti.getNumber()
 
   form.querySelector(`#phone`).value= phone_number
