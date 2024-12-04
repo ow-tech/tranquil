@@ -93,21 +93,31 @@
 
  /* Our Services */
 
- .our-fleet-text {
-    position: relative;
-    display: inline-block;
-    text-align: center;
+ .ft-column {
+  border: 2px solid #d3d3d3; /* Light gray border */
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px; /* Adds spacing between rows */
 }
 
-.our-fleet-text::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    width: 65%;
-    height: 4px;
-    background-color: #E77F55;
-    transform: translateX(-70%);
+.ft-image {
+  margin-bottom: 20px; /* Adds space below the image */
+}
+
+.ft-info {
+  margin-top: 10px;
+}
+
+/* Button styles */
+.ft-btn {
+  background-color: #214B4F;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.ft-btn:hover {
+  background-color: #F1844C;
 }
 
 
@@ -689,7 +699,7 @@ rent-header p {
 
 .car-section img {
   width: 100%;
-  height: 120px;
+  height: auto;
   object-fit: cover;
   border-radius: 8px;
   border: 2px solid var(--dark-teal);
