@@ -122,7 +122,6 @@
   background-color: #F1844C;
 }
 
-
 /*----------------------------about page css--------------------------*/
 
 #hero1 { 
@@ -218,6 +217,27 @@ form-button:hover {
   font-weight: bold; /* Optional: Makes the prices stand out more */
 }
 
+
+/* Change border color for time input */
+input[type="time"]:focus,
+input[type="date"]:focus,
+input[type="text"]:focus {
+  border-color: #e55151; /* Change border to the desired color */
+  box-shadow: 0 0 5px #e55151; /* Optional: Add a slight glow effect */
+  outline: none; /* Remove default outline */
+}
+
+/* Optional: Style all form-control inputs */
+input.form-control {
+  border: 1px solid #e55151; /* Set default border color */
+}
+
+input.form-control:focus {
+  border-color: #e55151;
+  box-shadow: 0 0 5px #e55151;
+}
+
+
 /* Ensure collapsed buttons also maintain the same color */
 .accordion-button:not(.collapsed) {
   background-color: #E77F55;
@@ -234,6 +254,7 @@ form-button:hover {
 .accordion-button:focus {
   border: .07px solid #E77F55; /* Example: Custom border color */
 }
+
 /* Responsive design for small screens */
 @media (max-width: 600px) {
   table {
@@ -612,7 +633,6 @@ width: 100%;
 color:#475F7B;
 padding:15px;
 }
-
 
 /* ----------------------rent a car ------------------- */
 

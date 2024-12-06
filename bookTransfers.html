@@ -164,15 +164,12 @@
         <div class="col-md-6">
           <div class="mt-5 mb-5">
             <div class="text-center th">
-              <h4 class="text-center th">Booking Form</h4>
+              <h4 class="text-center th booking-title">Booking Form</h4>
             </div>
-
+        
             <div class="form-area">
               <div class="form-inner">
-                <form
-                  id="bookTransfers"
-                  onsubmit="validateForm(event, 'bookTransfers')"
-                >
+                <form id="bookTransfers" onsubmit="validateForm(event, 'bookTransfers')">
                   <input
                     type="hidden"
                     id="service"
@@ -221,7 +218,6 @@
                       required
                     />
                   </div>
-
                   <div class="form-group">
                     <input
                       type="text"
@@ -232,7 +228,6 @@
                       required
                     />
                   </div>
-                  <!-- control show of from input if Other is selected -->
                   <div class="form-group">
                     <select
                       class="form-select mb-3 input-font-size-sm"
@@ -240,24 +235,18 @@
                       name="from-select"
                       required
                       aria-label="Default select example"
-                    >
-                     
-                      
-                    </select>
+                    ></select>
                   </div>
-
                   <div class="form-group">
                     <input
                       type="text"
                       id="from-input"
                       name="from"
                       placeholder="Type Starting Point"
-                      class="form-control"
-                      style="display: none"
+                      class="form-control hidden-input"
                       required
                     />
                   </div>
-
                   <div class="form-group">
                     <select
                       class="form-select mb-3 input-font-size-sm"
@@ -265,24 +254,18 @@
                       name="to-select"
                       required
                       aria-label="Default select example"
-                    >
-                    
-                    
-                    </select>
+                    ></select>
                   </div>
-
                   <div class="form-group">
                     <input
                       type="text"
                       id="to-input"
                       name="to"
                       placeholder="Type Destination"
-                      class="form-control"
-                      style="display: none"
+                      class="form-control hidden-input"
                       required
                     />
                   </div>
-
                   <div class="form-group">
                     <input
                       type="date"
@@ -303,7 +286,7 @@
                     />
                   </div>
                   <div class="form-group">
-                    <span id="captchaQuestionbookTransfers"> </span>
+                    <span id="captchaQuestionbookTransfers" class="captcha-text"></span>
                     <input
                       type="text"
                       id="captchaAnswerbookTransfers"
@@ -313,17 +296,13 @@
                       required
                     />
                   </div>
-
-                  <button type="submit" class="form-button">
-                    Send Booking
-                  </button>
+                  <button type="submit" class="form-button">Send Booking</button>
                 </form>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+        
 
     <div class="container my-5 w-100">
       <h2 class="text-center mb-4">Frequently Asked Questions</h2>
