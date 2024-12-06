@@ -73,6 +73,7 @@
 /* Why choose us */
 
 .why-choose-us-container{
+  background-color: #FCB153;
     margin-top: 10rem;
 
     padding: 20px;
@@ -905,4 +906,10 @@ font-size: xx-large;
   height: 100vh; /* Full viewport height */
   text-align: center; /* Optional: Center-align text */
   flex-direction: column; /* Stack the sentences vertically */
+}
+
+.booktransfer{
+  background-image: url('https://res.cloudinary.com/dameisncm/image/upload/v1733415063/hq720_kq7tfj.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
