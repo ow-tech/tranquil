@@ -217,7 +217,6 @@ form-button:hover {
   font-weight: bold; /* Optional: Makes the prices stand out more */
 }
 
-
 /* Change border color for time input */
 input[type="time"]:focus,
 input[type="date"]:focus,
@@ -236,7 +235,6 @@ input.form-control:focus {
   border-color: #e55151;
   box-shadow: 0 0 5px #e55151;
 }
-
 
 /* Ensure collapsed buttons also maintain the same color */
 .accordion-button:not(.collapsed) {
@@ -268,10 +266,6 @@ input.form-control:focus {
       font-size: 12px;
   }
 }
-
-/* ----------------------rent a car ------------------- */
-
-
 
 /*-------------------------------footer Css --------------------*/
 .footer88 {
