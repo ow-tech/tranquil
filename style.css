@@ -216,25 +216,7 @@ form-button:hover {
 .pr-price {
   color: #214B4F;
   font-weight: bold; /* Optional: Makes the prices stand out more */
-}
-
-/* Change border color for time input */
-input[type="time"]:focus,
-input[type="date"]:focus,
-input[type="text"]:focus {
-  border-color: #e55151; /* Change border to the desired color */
-  box-shadow: 0 0 5px #e55151; /* Optional: Add a slight glow effect */
-  outline: none; /* Remove default outline */
-}
-
-/* Optional: Style all form-control inputs */
-input.form-control {
-  border: 1px solid #e55151; /* Set default border color */
-}
-
-input.form-control:focus {
-  border-color: #e55151;
-  box-shadow: 0 0 5px #e55151;
+float: left;
 }
 
 /* Ensure collapsed buttons also maintain the same color */
@@ -344,77 +326,35 @@ footer-h3 {
 
 
 @media (max-width: 768px) {
-  .footer88 .row {
-      flex-direction: column; /* Stack columns vertically on small screens */
-      align-items: center;
-  }
-
-  .footer88 .col-md-3 {
-      text-align: center;
-      margin-bottom: 20px;
-  }
-
-  /* Reduce padding and font size for mobile */
   .footer88 {
-      padding: 20px 0;
+    height: auto; /* Adjust height for smaller screens */
+    background-size: contain; /* Contain the background image */
   }
 
-  .footer88 h5 {
-      font-size: 16px;
+  .containerzz {
+    margin-top: 20vh; /* Adjust the margin for better fit */
   }
 
-  .footer88 a {
-      font-size: 13px;
+  footer-h3 {
+    font-size: 18px; /* Smaller font for better readability */
   }
 
-  .btn-signup, .btn-signin {
-      font-size: 14px;
-      padding: 8px 16px;
+  .logo-text {
+    font-size: 20px; /* Adjust logo text size */
   }
 
-  /* Make social icons smaller on small screens */
-  .footer88 .social-iconss a {
-      font-size: 18px;
-      margin: 0 10px;
+  .btn-signup,
+  .btn-signin {
+    font-size: 16px; /* Adjust button font size */
+    padding: 8px 15px; /* Adjust button padding */
+    margin-right: 5px; /* Reduce spacing between buttons */
   }
 
-  /* Center the copyright text */
-  .footer88 .text-center p {
-      font-size: 13px;
-      margin-top: 15px;
-  }
-
-  /* Adjust the divider width for smaller screens */
   .divider {
-      width: 80%;
+    margin: 10px 0; /* Adjust margin for better spacing */
   }
 }
 
-/* Extra Small Screens (e.g., very small phones) */
-@media (max-width: 480px) {
-  .footer88 h5 {
-      font-size: 14px;
-  }
-
-  .footer88 .list-unstyled li {
-      margin-bottom: 8px;
-  }
-
-  .footer88 .col-md-3 {
-      padding: 0 10px;
-  }
-
-  .btn-signup, .btn-signin {
-      font-size: 13px;
-      padding: 6px 14px;
-  }
-
-  .footer88 img {
-      max-width: 120px; /* Make the logo smaller */
-  }
-
-  
-}
 .navbar-brand{
   /* display: none; */
   max-width: 50px;
@@ -629,6 +569,8 @@ color:#475F7B;
 padding:15px;
 }
 
+
+
 /* ----------------------rent a car ------------------- */
 
 /* General styling */
@@ -826,6 +768,196 @@ form-select {
   }
 }
 
+.fp-gallery-img {
+  height: 300px; /* Keep height consistent */
+  object-fit: cover;
+  width: 100%; /* Ensure images take up full width of their column */
+}
+.fp-btn {
+background-color: #214B4F; /* Background color */
+color: white; /* Text color */
+border: none;
+padding: 12px 24px; /* Increased padding for larger size */
+font-size: 1.2rem; /* Larger font size */
+transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+border-radius: 5px; /* Optional: Rounded corners for aesthetics */
+display: inline-block; /* Optional: Ensures block-level styling */
+text-align: center;
+width: auto; /* Ensure width adapts to content */
+}
+
+.fp-btn:hover {
+background-color: #F1844C; /* Darker background color on hover */
+transform: scale(1.1); /* Increase size on hover */
+font-size: 1.3rem; /* Slightly larger size on hover for a bolder look */
+}
+
+.pf-small-image {
+width: calc(300px); /* Original width (200px) + 100px */
+height: auto; /* Maintain aspect ratio */
+object-fit: cover; /* Ensure images look good */
+transition: transform 0.3s ease; /* Smooth effect for hover (optional) */
+}
+
+.pf-small-image:hover {
+transform: scale(1.05); /* Slight zoom-in effect on hover (optional) */
+}
+.pf-info-container {
+background-color: #f8f9fa; /* Light gray background */
+border-radius: 5px; /* Rounded corners */
+padding: 20px;
+}
+
+.pf-info-heading {
+font-size: 1.5rem; /* Slightly larger heading */
+font-weight: bold;
+margin-bottom: 1rem;
+}
+
+.pf-label {
+font-size: 1rem;
+flex-basis: 150px; /* Fixed width for consistent alignment */
+text-align: left;
+}
+
+.pf-description {
+font-size: 1rem;
+flex-grow: 1; /* Take remaining space */
+text-align: left; /* Align descriptions to start */
+padding-left: 10px; /* Add spacing between label and description */
+}
+
+.d-flex {
+display: flex;
+align-items: flex-start; /* Ensures label and description are aligned */
+}
+/* Button Styling for Tags */
+.pf-tag-btn {
+font-size: 0.9rem;
+padding: 6px 12px;
+border-radius: 20px; /* Rounded button style */
+transition: all 0.3s ease-in-out;
+flex: 1; /* Ensures buttons take equal space */
+margin-right: 5px; /* Small gap between buttons */
+}
+
+.pf-tag-btn:last-child {
+margin-right: 0; /* Remove gap for the last button in each row */
+}
+
+.pf-tag-btn:hover {
+background-color: #214B4F; /* Match "Book Now" button hover */
+color: white;
+transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.text-decoration-underline {
+text-decoration: underline; /* Add underline to headings */
+}
+
+/* Small screens (max-width: 768px) */
+@media (max-width: 768px) {
+  /* General styles */
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .row {
+    margin: 0;
+  }
+
+  /* Headings and text */
+  h2.pf-heading,
+  h3.pf-info-heading {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  p.pf-paragraph,
+  p.pf-description {
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+
+  /* Images */
+  .pf-main-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .pf-small-image {
+    width: 48%;
+    height: auto;
+  }
+
+  .fp-gallery-img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Buttons */
+  .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .pf-tag-btn {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Form styles */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .form-control {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .form-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  /* Info container */
+  .pf-info-container {
+    padding: 15px;
+  }
+
+  .pf-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .pf-description {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  /* Columns */
+  .col-md-6 {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  /* Image gallery */
+  .col-md-4,
+  .col-md-8 {
+    width: 100%;
+  }
+}
+
 /* ----------------------Mombasa south Coast------------------- */
 
 /* General Styles */
@@ -890,6 +1022,8 @@ font-size: xx-large;
       padding: 8px 15px;
   }
 }
+
+
 
 /*----------------------see more destinations-------------------*/
 
