@@ -1,52 +1,35 @@
-
-// our fleet modal
+// Initialize intlTelInput for phone number input
 const input = document.querySelector("#phone");
-// console.log('input, :', input)
-// Initialize intlTelInput
 const iti = window.intlTelInput(input, {
   utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.7.0/build/js/utils.js",
   initialCountry: "ke",
   separateDialCode: true
 });
-// const iti = window.intlTelInput(input, {
-//   loadUtilsOnInit: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.7.0/build/js/utils.js",
-//   initialCountry: "ke",
-// 	separateDialCode: true
-// });
 
 window.onload = generateCaptchasForAllForms;
 
+// Modal event listener
 const exampleModal = document.getElementById('exampleModal')
 if (exampleModal) {
   exampleModal.addEventListener('show.bs.modal', event => {
-    // Button that triggered the modal
     const button = event.relatedTarget
-    // Extract info from data-bs-* attributes
     const recipient = button.getAttribute('data-bs-whatever')
-    // If necessary, you could initiate an Ajax request here
-    // and then do the updating in a callback.
-
-    // Update the modal's content.
     const modalTitle = exampleModal.querySelector('.modal-title')
     const modalBodyInput = exampleModal.querySelector('.modal-body input')
-
     modalTitle.textContent = `New message to ${recipient}`
     modalBodyInput.value = recipient
   })
 }
 
-// control Selection of Others inputs
-
+// Control Selection of From/To inputs
 document.addEventListener('DOMContentLoaded', () => {
   const fromSelect = document.getElementById('from-select');
   const toSelect = document.getElementById('to-select');
   const fromInput = document.getElementById('from-input');
   const toInput = document.getElementById('to-input');
 
-  // Array of all available options for both selects
-  const allOptions = ["SGR/Airport", "Nyali", "Shanzu", "Mtwapa", "Naivas", "Nyali", "Ukunda", "Shimon","Watamu", "Malindi", "Diani", "Naivas Ukunda","Other"];
+  const allOptions = ["SGR/Airport", "Nyali", "Shanzu", "Mtwapa", "Naivas", "Ukunda", "Shimon","Watamu", "Malindi", "Diani", "Naivas Ukunda","Other"];
 
-  // Exclusion rules - which options should be disabled based on selection in 'from-select'
   const exclusionRules = {
     "SGR/Airport": ["SGR/Airport"],
     "Nyali": ["Nyali"],
@@ -62,11 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
     "Other": ["Other"]
   }
 
-  // Function to populate the select options dynamically
   function populateSelect(selectElement, defaultText) {
-    selectElement.innerHTML = ''; // Clear current options
-
-    // Add the default placeholder option
+    selectElement.innerHTML = '';
     const defaultOption = document.createElement("option");
     defaultOption.value = '';
     defaultOption.disabled = true;
@@ -74,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
     defaultOption.textContent = defaultText;
     selectElement.appendChild(defaultOption);
 
-    // Add the other options dynamically
     allOptions.forEach(option => {
       const optionElement = document.createElement("option");
       optionElement.value = option;
@@ -83,66 +62,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Function to toggle the input display and handle the name attributes for 'from' and 'to'
   function toggleInputDisplay(selectElement, inputElement, selectName) {
     if (selectElement.value === 'Other') {
       inputElement.style.display = 'block';
-      inputElement.name = selectName; // Set name for input
+      inputElement.name = selectName;
       inputElement.required = true;
-      selectElement.name = ''; // Clear name for select
+      selectElement.name = '';
     } else {
       inputElement.style.display = 'none';
-      inputElement.name = ''; // Clear name for input
+      inputElement.name = '';
       inputElement.required = false;
-      selectElement.name = selectName; // Restore name for select
+      selectElement.name = selectName;
     }
   }
 
-  // Function to disable/enable options based on the exclusion rules
   function updateToOptions() {
     const selectedFrom = fromSelect.value;
 
-    // Enable all options initially
     for (const option of toSelect.options) {
-      option.disabled = false;  // Enable all options
+      option.disabled = false;
     }
 
-    // If "Other" is selected in 'from-select', don't disable anything in 'to-select'
     if (selectedFrom !== 'Other' && exclusionRules[selectedFrom]) {
-      // Disable the options based on exclusion rules
       for (const option of toSelect.options) {
         if (exclusionRules[selectedFrom].includes(option.value)) {
-          option.disabled = true;  // Disable matching options
+          option.disabled = true;
         }
       }
     }
   }
 
-  // Event listener for 'from-select'
   fromSelect.addEventListener('change', () => {
     toggleInputDisplay(fromSelect, fromInput, 'from');
-    updateToOptions(); // Update the 'to-select' options based on the 'from-select' value
+    updateToOptions();
   });
 
-  // Event listener for 'to-select'
   toSelect.addEventListener('change', () => {
     toggleInputDisplay(toSelect, toInput, 'to');
   });
 
-  // Initialize the state by populating select options and setting event listeners
   populateSelect(fromSelect, 'Select Starting Point');
   populateSelect(toSelect, 'Select Destination');
-
-  // Initialize input fields visibility and options
   toggleInputDisplay(fromSelect, fromInput, 'from');
   toggleInputDisplay(toSelect, toInput, 'to');
-  updateToOptions(); // Ensure options are updated on page load
+  updateToOptions();
 });
-
-
-
-
-
 
 // Restrict travel date to upcoming dates only
 document.addEventListener('DOMContentLoaded', () => {
@@ -151,114 +115,76 @@ document.addEventListener('DOMContentLoaded', () => {
   travelDateInput.setAttribute('min', today);
 });
 
-
-
-
-// Array of form IDs
 const formIDs = ['bookTransfers','carRental'];
-   // Object to map form IDs to their corresponding template IDs
-   const templateMap = {
-    'bookTransfers': 'template_69kbfvu',
-    'carRental': 'template_ramldpg'
+
+const templateMap = {
+  'bookTransfers': 'template_69kbfvu',
+  'carRental': 'template_ramldpg'
 };
 
- // Function to generate and display captcha for each form
- function generateCaptcha(formID) {
+function generateCaptcha(formID) {
   const num1 = Math.floor(Math.random() * 10);
   const num2 = Math.floor(Math.random() * 10);
   const question = `What is ${num1} + ${num2}?`;
   const answer = num1 + num2;
 
-  // Set the question and correct answer for the specified form
   document.getElementById(`captchaQuestion${formID}`).innerText = question;
   document.getElementById(`captchaAnswer${formID}`).dataset.correctAnswer = answer;
-  // console.log(formID, question, answer)
 }
 
-// Generate captchas for all forms when the page loads
+function generateCaptchasForAllForms() {
+  formIDs.forEach(formID => generateCaptcha(formID));
+}
 
- function generateCaptchasForAllForms() {
-            formIDs.forEach(formID => generateCaptcha(formID));
-        }
-
-
-  // Event listener for modal launch buttons 
- // Event listener for modal launch buttons 
- document.querySelectorAll('[data-bs-toggle="modal"]').forEach(button => { button.addEventListener('click', function() { 
-  const formID = this.getAttribute('data-form-id'); 
-  const carID = this.getAttribute('data-car-id'); 
-  // console.log('i have clicked :', carID)
-  // Set the form's template ID 
-  document.getElementById('carID').value = carID;
-  
-  generateCaptcha(formID); 
+document.querySelectorAll('[data-bs-toggle="modal"]').forEach(button => { 
+  button.addEventListener('click', function() { 
+    const formID = this.getAttribute('data-form-id'); 
+    const carID = this.getAttribute('data-car-id'); 
+    document.getElementById('carID').value = carID;
+    generateCaptcha(formID); 
+  });
 });
- });
 
-// Function to validate the form
 function validateForm(e, formID) {
   e.preventDefault();
   const form = e.target;
-
-  let phone_number= iti.getNumber()
-
-  form.querySelector(`#phone`).value= phone_number
- 
+  let phone_number = iti.getNumber();
+  form.querySelector(`#phone`).value = phone_number;
   
-  //   window.intlTelInput( {
-  //   loadUtilsOnInit: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.7.0/build/js/utils.js",
-   
-  // });
-  
-  
-  // Validate Captcha
   const captchaAnswer = form.querySelector(`#captchaAnswer${formID}`).value;
   const correctAnswer = form.querySelector(`#captchaAnswer${formID}`).dataset.correctAnswer;
   if (parseInt(captchaAnswer) !== parseInt(correctAnswer)) {
-      alert("Incorrect captcha answer. Please try again.");
-      generateCaptcha(formID); // Regenerate captcha on failure
-      return false;
+    alert("Incorrect captcha answer. Please try again.");
+    generateCaptcha(formID);
+    return false;
   }
 
-  // Validate Travel Date
   const travelDate = new Date(form.querySelector(`#travelDate`).value);
-  // console.log('traveldate >', travelDate)
   const today = new Date();
-  today.setHours(0, 0, 0, 0); // Ignore time portion for comparison
+  today.setHours(0, 0, 0, 0);
   if (travelDate < today) {
-      alert("Travel date cannot be in the past.");
-      return false;
+    alert("Travel date cannot be in the past.");
+    return false;
   }
-
-  // Determine the email template based on form ID
 
   const templateID = templateMap[formID];
-
   const serviceID = 'default_service';
- 
-  // console.log('phone :', number)
-  // Send form data using emailjs
 
   emailjs.sendForm(serviceID, templateID, form)
-      .then(() => {
-        // console.log('sendFrom')
-          alert('Sent successfully!');
-          form.reset();
-          generateCaptcha(formID); // Regenerate captcha after successful submission
-      })
-      .catch((err) => {
-          alert('Error sending form: ' + JSON.stringify(err));
-      });
+    .then(() => {
+      alert('Sent successfully!');
+      form.reset();
+      generateCaptcha(formID);
+    })
+    .catch((err) => {
+      alert('Error sending form: ' + JSON.stringify(err));
+    });
 
   return true;
 }
 
-// travel destination
-
-// JavaScript to handle the auto-selection feature and persist the selected action
-
+// Travel destination package selection
 document.addEventListener("DOMContentLoaded", function() {
-  // Handle changes for each package selection dropdown
   const packageSelect1 = document.getElementById('package1');
   const selectedPackage1 = document.getElementById('selected-package1');
   
@@ -268,29 +194,18 @@ document.addEventListener("DOMContentLoaded", function() {
   const packageSelect3 = document.getElementById('package3');
   const selectedPackage3 = document.getElementById('selected-package3');
   
-  // Event listener for Package 1 selection
   packageSelect1.addEventListener('change', function() {
     const selectedValue = packageSelect1.value;
     selectedPackage1.textContent = selectedValue || "None";
   });
 
-  // Event listener for Package 2 selection
   packageSelect2.addEventListener('change', function() {
     const selectedValue = packageSelect2.value;
     selectedPackage2.textContent = selectedValue || "None";
   });
 
-  // Event listener for Package 3 selection
   packageSelect3.addEventListener('change', function() {
     const selectedValue = packageSelect3.value;
     selectedPackage3.textContent = selectedValue || "None";
   });
 });
-
-
-
-
-
-
-
-
