@@ -346,6 +346,49 @@ img {
   margin-bottom: 10px;
 }
 
+/* Rating Stars (moved from inline) */
+.rating-stars {
+  font-size: 2rem;
+  line-height: 1;
+}
+.star.rated   { color: #F1844C; }
+.star.unrated { color: #ccc; }
+
+/* Destination info row (moved from inline) */
+.divider {
+  width: 90%;
+  border: none;
+  height: 2px;
+  background-color: #F1844C;
+  margin: 15px auto;
+}
+
+.info-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.2rem;
+  color: #214B4F;
+  margin-bottom: 15px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-icon {
+  font-size: 1.2rem;
+}
+
+.info-divider {
+  width: 2px;
+  height: 30px;
+  background-color: #F1844C;
+}
+
 .fp-gallery-img {
   height: 300px;
   object-fit: cover;
@@ -377,7 +420,103 @@ img {
   transform: scale(1.05);
 }
 
-/* ==================== FOOTER ==================== */
+/* ==================== BOOKTRANSFER NAVBAR ==================== */
+/*
+  The .booktransfer class is on the <body> (or outermost wrapper) of the
+  booktransfer page. This scopes all rules below to that page only,
+  so the home navbar is completely unaffected.
+*/
+
+/* Sit the navbar over the background image, transparent by default */
+.booktransfer .navbar {
+  background-color: transparent !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 0.8rem 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* After scrolling, solidify to match the home navbar's green */
+.booktransfer .navbar.scrolled {
+  background-color: #214B4F !important;
+  position: fixed;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Nav links — white over the image, orange on hover (same as home) */
+.booktransfer .navbar .nav-link {
+  color: #ffffff !important;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.booktransfer .navbar .nav-link:hover,
+.booktransfer .navbar .nav-link.active {
+  color: #F1844C !important;
+}
+
+/* Dropdown — dark green background to match home */
+.booktransfer .navbar .dropdown-menu {
+  background-color: #214B4F;
+  border: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.booktransfer .navbar .dropdown-item {
+  color: #ffffff;
+  padding: 0.6rem 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.booktransfer .navbar .dropdown-item:hover {
+  background-color: #F1844C;
+  color: #ffffff;
+  padding-left: 1.5rem;
+}
+
+/* Hamburger toggler — white icon for visibility over the image */
+.booktransfer .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.booktransfer .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Top bar — same dark green + white text as home */
+.booktransfer .top-bar {
+  background-color: #214B4F;
+  color: #ffffff;
+  position: relative;
+  z-index: 101;
+}
+
+.booktransfer .top-bar a {
+  color: #ffffff;
+}
+
+.booktransfer .top-bar a:hover {
+  color: #F1844C;
+  opacity: 1;
+}
+
+/* Logo image — same size/behaviour as home */
+.booktransfer .logo-img {
+  width: 80px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.booktransfer .logo-img:hover {
+  transform: scale(1.05);
+}
+
 /* ==================== FOOTER STYLES ONLY ==================== */
 
 .footer88 {
@@ -764,6 +903,7 @@ img {
     margin-bottom: 1rem;
   }
 }
+
 /* ==================== GLASS EFFECT ==================== */
 .glass-box {
   background: rgba(255, 255, 255, 0.18);
@@ -804,96 +944,86 @@ img {
 
 /* Tablets (768px and below) */
 @media (max-width: 768px) {
-  /* Typography */
   .hero-title {
     font-size: 2.5rem;
   }
-  
+
   .hero-text9 {
     font-size: 1rem;
   }
-  
+
   .section-titleT,
   .our-fleet-text,
   .destination-heading {
     font-size: 1.8rem;
   }
-  
-  /* Top Bar */
+
   .top-bar {
     font-size: 0.9rem;
   }
-  
+
   .logo-img {
     width: 60px;
   }
-  
-  /* Navbar */
+
   .navbar-nav {
     padding: 1rem 0;
   }
-  
+
   .dropdown-menu {
     border: 1px solid #dee2e6;
     margin-top: 0;
   }
-  
-  /* Hero Section */
+
   .carousel-item img {
     height: 250px;
   }
-  
-  /* Layout */
+
   .why-choose-us-container {
     margin-top: 2rem;
     padding: 1.5rem;
   }
-  
+
   .glass-box {
     padding: 2rem 1.5rem;
   }
-  
-  /* Forms */
+
   .form-area {
     padding: 1.5rem;
   }
-  
+
   .th {
     font-size: 1.3rem;
   }
-  
-  /* Columns */
+
   .unique-column {
     width: 100%;
     margin-bottom: 1.5rem;
   }
-  
-  /* Fleet */
+
   .ft-column {
     margin-bottom: 1.5rem;
   }
-  
-  /* Footer */
+
   .footer88 {
     min-height: auto;
     padding: 2rem 0;
   }
-  
+
   .containerzz {
     margin-top: 5vh;
   }
-  
+
   .logo-text {
     font-size: 1.5rem;
   }
-  
+
   .btn-signup,
   .btn-signin {
     font-size: 0.9rem;
     padding: 8px 15px;
   }
-  
-  /* Buttons */
+
   .btn-book-now,
   .btn-see-more,
   .fp-btn,
@@ -901,107 +1031,105 @@ img {
     width: 100%;
     margin-bottom: 10px;
   }
-  
+
   .fp-gallery-img {
     height: 200px;
+  }
+
+  /* Booktransfer navbar mobile */
+  .booktransfer .navbar {
+    position: fixed;
+    background-color: #214B4F !important;
+  }
+
+  .booktransfer .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
   }
 }
 
 /* Mobile (576px and below) */
 @media (max-width: 576px) {
-  /* Typography */
   .hero-title {
     font-size: 2rem;
   }
-  
+
   .hero-text9 {
     font-size: 0.9rem;
   }
-  
+
   .section-titleT,
   .our-fleet-text,
   .destination-heading {
     font-size: 1.5rem;
   }
-  
-  /* Top Bar */
+
   .top-bar {
     font-size: 0.85rem;
   }
-  
+
   .contact-info a {
     font-size: 0.9rem;
     margin-right: 0.5rem;
   }
-  
+
   .social-icons a svg {
     width: 18px;
     height: 18px;
   }
-  
-  /* Hero */
+
   .hero-button,
   .hero-button9 {
     padding: 10px 20px;
     font-size: 0.9rem;
   }
-  
+
   .carousel-item img {
     height: 200px;
   }
-  
-  /* Layout */
+
   .why-choose-us-container {
     padding: 1rem;
   }
-  
+
   .glass-box {
     padding: 1.5rem 1rem;
   }
-  
-  /* Forms */
+
   .form-area {
     padding: 1rem;
   }
-  
+
   .form-control,
   .form-select {
     padding: 10px;
     font-size: 0.9rem;
   }
-  
+
   .th {
     font-size: 1.2rem;
     padding: 0.8rem;
   }
-  
-  /* Footer */
+
   .logo-text {
     font-size: 1.3rem;
   }
-  
+
   .btn-signup,
   .btn-signin {
     font-size: 0.85rem;
     padding: 8px 12px;
     margin-right: 5px;
   }
-  
-  .divider {
-    margin: 1.5rem auto;
-  }
-  
-  /* Fleet */
+
   .ft-info {
     flex-direction: column;
     gap: 10px;
   }
-  
+
   .ft-btn {
     width: 100%;
   }
-  
-  /* Gallery */
+
   .fp-gallery-img {
     height: 180px;
   }
@@ -1012,21 +1140,21 @@ img {
   .hero-title {
     font-size: 1.8rem;
   }
-  
+
   .hero-text9 {
     font-size: 0.85rem;
   }
-  
+
   .section-titleT,
   .our-fleet-text,
   .destination-heading {
     font-size: 1.3rem;
   }
-  
+
   .carousel-item img {
     height: 180px;
   }
-  
+
   .fp-gallery-img {
     height: 150px;
   }
@@ -1038,7 +1166,7 @@ img {
     height: auto;
     min-height: 100vh;
   }
-  
+
   .hero-content {
     position: relative;
     transform: none;
